@@ -7,7 +7,7 @@ pipeline {
         pollSCM('* * * * *') //polling for changes, here once a minute
     }
 
-	dir("folder") {
+	dir("./validator-project") {
     	sh "pwd"
 	}
 
@@ -25,9 +25,11 @@ pipeline {
             }
         }
     }
+
     post {
         always {
         	archiveArtifacts artifacts: '**/build/reports/**', fingerprint: true
         }
     }
 }
+
