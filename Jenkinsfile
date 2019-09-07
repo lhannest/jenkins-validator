@@ -8,11 +8,11 @@ pipeline {
     }
 
     stages {
-		dir("./validator-project") {
-			sh "pwd"
-		}
         stage('Unit & Integration Tests') {
             steps {
+				dir("./validator-project") {
+					sh "pwd"
+				}
                 script {
 					sh "pwd"
                     try {
