@@ -7,11 +7,10 @@ pipeline {
         pollSCM('* * * * *') //polling for changes, here once a minute
     }
 
-	dir("./validator-project") {
-    	sh "pwd"
-	}
-
     stages {
+		dir("./validator-project") {
+			sh "pwd"
+		}
         stage('Unit & Integration Tests') {
             steps {
                 script {
