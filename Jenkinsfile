@@ -12,15 +12,15 @@ pipeline {
             steps {
 				dir("./validator-project") {
 					sh "pwd"
+					script {
+						sh "pwd"
+                	    try {
+                	        sh './gradlew clean test --no-daemon' //run a gradle task
+                	    } finally {
+                	        junit '**/build/test-results/test/*.xml' //make the junit test results available in any case (success & failure)
+                	    }
+                	}
 				}
-                script {
-					sh "pwd"
-                    try {
-                        sh './gradlew clean test --no-daemon' //run a gradle task
-                    } finally {
-                        junit '**/build/test-results/test/*.xml' //make the junit test results available in any case (success & failure)
-                    }
-                }
             }
         }
     }
