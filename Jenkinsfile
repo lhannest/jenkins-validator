@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     triggers {
-        cron('H */8 * * *') //regular builds
+        cron('H H * * *') //regular build every day
         pollSCM('* * * * *') //polling for changes, here once a minute
     }
 
@@ -13,7 +13,8 @@ pipeline {
 				dir("./validator-project") {
 					script {
                 	    try {
-                	        sh './gradlew clean test --no-daemon' //run a gradle task
+                            // Run beacon tests (in package bio.knowledge.validator) excluding tests in the aggregator-client and beacon-client sub-project.
+                            sh './gradlew clean test -x :aggregator-client:test -x :beacon-client:test --tests "bio.knowledge.validator.*" --no-daemon'
                 	    } finally {
                 	        junit '**/build/test-results/test/*.xml' //make the junit test results available in any case (success & failure)
                 	    }
