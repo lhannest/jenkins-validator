@@ -33,7 +33,7 @@ pipeline {
     post {
         always {
             script {
-                if (env.BRANCH_NAME == 'master') {
+                if (env.BRANCH_NAME != 'master') {
         	        archiveArtifacts artifacts: '**/build/reports/**', fingerprint: true
                 }
             }
