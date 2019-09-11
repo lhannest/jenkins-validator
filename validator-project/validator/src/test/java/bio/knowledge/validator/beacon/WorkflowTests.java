@@ -1,4 +1,4 @@
-package bio.knowledge.validator;
+package bio.knowledge.validator.beacon;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,6 +25,7 @@ import bio.knowledge.client.model.BeaconStatement;
 import bio.knowledge.client.model.BeaconStatementObject;
 import bio.knowledge.client.model.BeaconStatementSubject;
 import bio.knowledge.client.model.ExactMatchResponse;
+import bio.knowledge.validator.BeaconTestBase;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

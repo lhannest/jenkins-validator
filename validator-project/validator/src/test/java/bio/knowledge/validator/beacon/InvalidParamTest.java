@@ -1,4 +1,4 @@
-package bio.knowledge.validator;
+package bio.knowledge.validator.beacon;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,6 +10,7 @@ import bio.knowledge.client.ApiClient;
 import bio.knowledge.client.ApiException;
 import bio.knowledge.client.api.ConceptsApi;
 import bio.knowledge.client.api.StatementsApi;
+import bio.knowledge.validator.BeaconTestBase;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

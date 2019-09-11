@@ -1,4 +1,4 @@
-package bio.knowledge.validator;
+package bio.knowledge.validator.beacon;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,6 +16,7 @@ import bio.knowledge.client.ApiException;
 import bio.knowledge.client.api.ConceptsApi;
 import bio.knowledge.client.model.BeaconConcept;
 import bio.knowledge.client.model.ExactMatchResponse;
+import bio.knowledge.validator.BeaconTestBase;
 
 /**
  * This test seems pointless, but I copied it over anyway.

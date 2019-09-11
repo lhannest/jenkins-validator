@@ -20,7 +20,7 @@ pipeline {
 					script {
                 	    try {
                             // Run beacon tests (in package bio.knowledge.validator) excluding tests in the aggregator-client and beacon-client sub-project.
-                            sh './gradlew clean test -x :aggregator-client:test -x :beacon-client:test --tests "bio.knowledge.validator.*" --no-daemon'
+                            sh './gradlew clean test -x :aggregator-client:test -x :beacon-client:test --tests "bio.knowledge.validator.beacon.*" --no-daemon'
                 	    } finally {
                 	        junit '**/build/test-results/test/*.xml' //make the junit test results available in any case (success & failure)
                 	    }

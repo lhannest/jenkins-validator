@@ -1,4 +1,4 @@
-package bio.knowledge.validator;
+package bio.knowledge.validator.beacon;
 
 
 import static org.junit.Assert.assertTrue;
@@ -23,6 +23,9 @@ import bio.knowledge.client.model.BeaconConcept;
 import bio.knowledge.client.model.BeaconStatement;
 import bio.knowledge.client.model.BeaconStatementObject;
 import bio.knowledge.client.model.BeaconStatementSubject;
+import bio.knowledge.validator.BeaconTestBase;
+import bio.knowledge.validator.FilterSetContainer;
+import bio.knowledge.validator.MetadataContainer;
 import bio.knowledge.validator.FilterSetContainer.FilterSet;
 
 @RunWith(SpringRunner.class)
