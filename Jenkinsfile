@@ -9,6 +9,12 @@ pipeline {
 
     stages {
         stage('Testing') {
+            when {
+                not {
+                    branch 'master'
+                }
+            }
+
             steps {
 				dir("./validator-project") {
 					script {
