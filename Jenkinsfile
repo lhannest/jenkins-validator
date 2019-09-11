@@ -32,7 +32,11 @@ pipeline {
 
     post {
         always {
-        	archiveArtifacts artifacts: '**/build/reports/**', fingerprint: true
+            script {
+                if (env.BRANCH_NAME == 'master') {
+        	        archiveArtifacts artifacts: '**/build/reports/**', fingerprint: true
+                }
+            }
         }
     }
 }
