@@ -1,4 +1,6 @@
-# Jenkins Validator
+# Jenkins Validator for Knowledge Beacons
+
+The [Knowledge Beacon](https://github.com/NCATS-Tangerine/translator-knowledge-beacon) is an API standard aimed at biomedical knowledge discovery. Particular beacons are web applications that implement this API, and provide a convenient common interface across multiple data sources. This system automates the testing of those beacons.
 
 This github repo is a multi-branch Jenkins pipeline for running the validator project. Except for the master branch, each branch represents a testing pipeline and is configured slightly differently to run those tests (a git diff of branches may be useful to see those exact differences). The master branch does not run any tests and it should automatically pass.
 
@@ -44,3 +46,21 @@ docker start jenkins
 ```
 
 The Makefile in the root directory offers some shorthand commands for convenience.
+
+### Using Jenkins
+
+The top view will look like this. Click on "jenkins-validator" to go further.
+
+![](images/top_view.png)
+
+You will now see the job view. Each job corresponds to a branch in this repository with the same name. Other than the master branch, each branch is configured to query and test a beacon instance. Click on a job name to go further.
+
+![](images/job_view.png)
+
+You will now be able to see the build history. The latest build is on top, and has the highest number. In this image there is only one build. Click the number to see the results of that build.
+
+![](images/build_list.png)
+
+You will now be able to see the artifacts that this build has produced, i.e. the JUnit HTML test results. Click index.html to go to the main page. You will now be able to explore the test failures of this build.
+
+![](images/error_view.png)
